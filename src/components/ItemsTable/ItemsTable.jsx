@@ -6,19 +6,19 @@ import "./style.css";
 class ItemsTable extends Component {
   render() {
     return (
-      <section>
-        <table className="items-table">
+      <div>
+        <table>
           <tr>
-            <th></th>
-            <th>descreption</th>
-            <th>quantity</th>
-            <th>cust</th>
-            <th>Total</th>
+            <th class="col-xs-1"></th>
+            <th class="col-xs-1">descreption</th>
+            <th class="col-xs-1">quantity</th>
+            <th class="col-xs-1">cust</th>
+            <th class="col-xs-1">Total</th>
           </tr>
           <Items />
           <AddItems/>
         </table>
-      </section>
+      </div>
     );
   }
 }

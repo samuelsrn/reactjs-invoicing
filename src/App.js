@@ -7,9 +7,9 @@ import ItemsTable from "./components/ItemsTable"
 class App extends Component {
   render() {
     return(
-    <section className="App">
+    <div className="items-table">
       <ItemsTable descreption="" quantity="" cust="" />
-    </section>    
+    </div>    
     );
   }
 }

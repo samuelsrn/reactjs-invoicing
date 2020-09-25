@@ -3,16 +3,18 @@ import "./style.css";
 
 class AddItems extends Component {
   render() {
-    return (  
-        <tr>
-          <td>
-            <button type="submit" value="">[+]</button>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+    return (
+      <tr>
+        <td class="col-xs-1 add-item-container">
+          <button class="btn btn-primary" type="submit" value="">
+            [+]
+          </button>
+        </td>
+        <td class="col-xs-1 add-item-container"></td>
+        <td class="col-xs-1 add-item-container"></td>
+        <td class="col-xs-1 add-item-container"></td>
+        <td class="col-xs-1 add-item-container"></td>
+      </tr>
     );
   }
 }
