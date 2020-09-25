@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Total from "../Total";
 import "./style.css";
 
 class Items extends Component {
@@ -38,44 +37,43 @@ class Items extends Component {
       <div>
         {this.props.Items.map((item, index) => {
           return (
-            <tr>
-              <td class="col-xs-1 add-item-container">
-                <button
-                  class="btn btn-danger"
-                  type="submit"
-                  onClick={() => this.props.onClickRemoveItems(index)}
-                >
-                  [x]
-                </button>
-              </td>
-              <td class="col-xs-1 add-item-container">
-                <input
-                  type="text"
-                  placeholder="descreption"
-                  onChange={this._insert_descreption.bind(this)}
-                ></input>
-              </td>
-              <td class="col-xs-1 add-item-container">
-                <input
-                  type="text"
-                  placeholder="quantity"
-                  onChange={(event) =>
-                    this._insert_quantity(index, event.target.value)
-                  }
-                ></input>
-              </td>
-              <td class="col-xs-1 add-item-container">
-                <input
-                  type="text"
-                  placeholder="cust"
-                  position={index}
-                  onChange={(event) =>
-                    this._insert_cust(index, event.target.value)
-                  }
-                ></input>
-              </td>
-              <td>{item.total}</td>
-            </tr>
+            <section>
+              <div className="row invoice-item">
+                <div className="col-xs-1 remove-item-container">
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => this.props.onClickRemoveItems(index)}
+                  >
+                    [X]
+                  </button>
+                </div>
+                <div className="col-xs-5 input-container">
+                  <input
+                    placeholder="Description"
+                    onChange={this._insert_descreption.bind(this)}
+                  />
+                </div>
+                <div className="col-xs-2 input-container">
+                  <input
+                    size="4"
+                    placeholder="Quantity"
+                    onChange={(event) =>
+                      this._insert_quantity(index, event.target.value)
+                    }
+                  />
+                </div>
+                <div className="col-xs-2 input-container">
+                  <input
+                    size="6"
+                    placeholder="Cost"
+                    onChange={(event) =>
+                      this._insert_cust(index, event.target.value)
+                    }
+                  />
+                </div>
+                <div className="col-xs-2 text-right input-container">{item.total}</div>
+              </div>
+            </section>
           );
         })}
       </div>

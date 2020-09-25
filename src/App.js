@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import HeaderTable from "./components/HeaderTable";
+import "./index.css";
 import Items from "./components/Items";
 import AddItems from "./components/AddItems";
 import Head from "./components/Head";
+import PrintActions from "./components/PrintActions";
+import ItemsTotal from "./components/ItemsTotal";
 
 class App extends Component {
   constructor(props) {
@@ -53,19 +53,20 @@ class App extends Component {
     });
   };
 
+ 
+
   render() {
     return (
       <div class="container" width="800px" id="invoice">
-        <table>
-          <Head />
-          <HeaderTable />
-          <Items
-            Items={this.state.items}
-            onClickRemoveItems={this.onClickRemoveItems}
-            updateItem={this.updateItem}
-          />
-          <AddItems onClick={this.onClickAddItems} />
-        </table>
+        <Head />
+        <Items
+          Items={this.state.items}
+          onClickRemoveItems={this.onClickRemoveItems}
+          updateItem={this.updateItem}
+        />
+        <AddItems onClick={this.onClickAddItems} />
+        <PrintActions />
+        <ItemsTotal />
       </div>
     );
   }

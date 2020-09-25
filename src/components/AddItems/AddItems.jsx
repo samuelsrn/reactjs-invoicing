@@ -4,17 +4,15 @@ import "./style.css";
 class AddItems extends Component {
   render() {
     return (
-      <tr>
-        <td class="col-xs-1 add-item-container">
-          <button class="btn btn-primary" type="submit" value="" onClick={this.props.onClick}>
-            [+]
-          </button>
-        </td>
-        <td class="col-xs-5 add-item-container"></td>
-        <td class="col-xs-2 add-item-container"></td>
-        <td class="col-xs-1 add-item-container"></td>
-        <td class="col-xs-1 add-item-container"></td>
-      </tr>
+      <section>
+        <div className="row invoice-item">
+          <div className="col-xs-12 add-item-container">
+            <button className="btn btn-primary" onClick={this.props.onClick}>
+              [+]
+            </button>
+          </div>
+        </div>
+      </section>
     );
   }
 }
